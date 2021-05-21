@@ -1,7 +1,7 @@
 new Vue({
     el: '#app', //dentro de este id se trabajara con vue
     data: {
-        valorA: 0,
+        valorA: 908526,
         valorB: 0
     },
     methods:{
@@ -11,7 +11,7 @@ new Vue({
         },
         descuento:function(){
 
-            return (this.valorA * 0.04 );
+            return ((this.suma * 0.08 / 2 ) );
         },
         descuento2:function(){
 
