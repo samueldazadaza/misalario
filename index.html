@@ -8,34 +8,51 @@
 </head>
 <body>
     <div id="app" class="container">
-        <!-- creando contenedor principal -->
-        <div class="shadow rounded container border my-3" style="width: 380px; height: 480px;">
-            <div class="text-success text-center h-4"><h1>Bienvenidos a la caluladora salarial</h1></div>
-                <!-- card -->
-                <div class="card text-dark bg-light mb-3" style="max-width: 22rem;">
-                    <div class="card-header bg-success text-white">Introduce los datos:</div>
-                        <div class="card-body">
-                            
-                            <input v-model.number="valorA" type="number" style="width: 100px;" step="1"> = Salario basico
-                            <input v-model.number="valorB" type="number" style="width: 100px;" step="1"> = Comision
+        <div class="row mx-auto">
+            <!-- creando contenedor principal -->
+            <div class="col-4 shadow rounded container border my-3" style="width: 380px; height: 550px;">
+                <div class="text-success text-center h-4">
+                    <h1>Bienvenidos a la calculadora salarial</h1>
+                </div>
+                    <!-- card -->
+                    <div class="card text-dark bg-light mb-3" style="max-width: 45rem;">
+                        <div class="card-header bg-success text-white">
+                            Introduce los datos:
 
-                            <div class="row">
-                                <div class="col-6 fs-4">concepto</div>
-                                <div class="col-6 fs-4">valor</div>
-                                <div class="col-6">Suma salarial: </div>
-                                <div class="col-6">{{ suma() }}</div>
-                                <div class="col-6">Descuento salud: </div>
-                                <div class="col-6">{{ descuento() }}</div>
-                                <div class="col-6">Descuento pension: </div>
-                                <div class="col-6">{{ descuento() }}</div>
-                                <div class="col-6">Total descuentos: </div>
-                                <div class="col-6">{{ descuento2() }}</div>
+                        </div>
+                            <div class="card-body">
+                                
+                                <input v-model.number="valorA" type="number" style="width: 100px;" step="1"> = Salario basico
+                                <input v-model.number="valorB" type="number" style="width: 100px;" step="1"> = Variable
+
+                                <div class="row">
+                                    <div class="my-3 col-8 fs-4">Concepto</div>
+                                    <div class="my-3 col-4 fs-4">Valor</div>
+                                    <div class="col-8">Suma salarial: </div>
+                                    <div class="col-4">$ {{ suma().toFixed(0) }}</div>
+
+                                    <div class="col-8">Descuento salud(4%):🕵️‍♀️ </div>
+                                    <div class="col-4">$ {{ descuento().toFixed(0) }}</div>
+                                    <div class="col-8">Descuento pension(4%):👴 </div>
+                                    <div class="col-4">$ {{ descuento().toFixed(0) }}</div>
+                                    <div class="col-8">Total descuentos(8%):💰 </div>
+                                    <div class="col-4">$ {{ descuentototal().toFixed(0) }}</div>
+
+                                    <div class="col-8 mt-3">Auxilio de transporte:💸 </div>
+                                    <div class="col-4 mt-3">$ {{ transporte }}</div>
+
+                                    <div class="col-8 mt-3">Neto a pagar:💸 </div>
+                                    <div class="col-4 mt-3">$ {{ netoapagar().toFixed(0) }}</div>
+                                </div>
                                 
                             </div>
-                            
-                            <p class="card-text">subtotal</p>
-                        </div>
-                </div>
+                    </div>
+            </div>
+
+            <!-- imagen alusiva -->
+            <div class="col- mx-auto">
+                <img src="http://olegif.com/bin/gifs/00/05/34.gif" alt="">
+            </div>
         </div>
     </div>
     <!-- development version, includes helpful console warnings -->
